@@ -1,0 +1,68 @@
+---
+let base = import.meta.env.BASE_URL.replace(/\/$/, ''); // Remove trailing slash
+
+const stats = [
+  {
+    name: 'Years',
+    value: '5',
+  },
+  {
+    name: 'Experts',
+    value: '10',
+  },
+  {
+    name: 'Past Projects',
+    value: '10',
+  },
+  {
+    name: 'Current Projects',
+    value: '10',
+  },
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="grid gap-16 lg:grid-cols-2 lg:gap-24">
+      <img
+        class="mx-auto w-full h-auto max-h-[860px] object-cover rounded-3xl"
+        src={`${base}/assets/pirata2.png`}
+        alt="Our experts working together"
+      />
+
+      <div class="flex flex-col gap-10">
+        <!-- Mission description -->
+        <div class="space-y-8 sm:space-y-12">
+          <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Our mission</h2>
+          <div class="space-y-6">
+            <p class="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+              Founded two years ago, we are a tight-knit team of 10 highly skilled and experienced developers, 
+              each bringing 5 to 10+ years of expertise across multiple technologies and game development contexts.
+            </p>
+            <p class="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+              But we see ourselves more than developers; we are storytellers, innovators, and collaborators. 
+              Whether forging our own original worlds or partnering with studios worldwide, we bring a distinct 
+              "Portuguese touch"—rich in tradition yet daring in execution. Through curiosity, craftsmanship, 
+              and a pinch of irreverence, we push the boundaries of play, ensuring every project carries the warmth of our heritage and the fire of our ambition.
+            </p>
+            <p class="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+              Because great games, like great traditions, are meant to be shared.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <dl class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {
+            stats.map((stat) => (
+              <div class="border-primary-900/10 dark:border-[#cf7e52] rounded-3xl border p-6">
+                <dt class="text-base">{stat.name}</dt>
+                <dd class="text-3xl font-medium tracking-tight">{stat.value}</dd>
+              </div>
+            ))
+          }
+        </dl>        
+      </div>
+    </div>  
+  </div>
+</section>
